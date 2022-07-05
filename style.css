@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("https://cdn.pixabay.com/photo/2016/11/08/17/15/abacus-1808917_960_720.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    cursor: default;
+  }
+  
+  .calculator {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    border: 2px solid black;
+    height: 30rem;
+    width: 20rem;
+    background-color: rgba(126, 195, 212, 0.95);
+    border-radius: 10px;
+  }
+  
+  .display {
+    grid-column: 1/-1;
+    grid-row: 1/span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 2rem;
+    color: rgb(111, 221, 116);
+    background-color: rgb(10, 14, 5);
+    border: 1px solid black;
+    padding: 8px;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .display > div {
+    margin: -5px;
+  }
+  
+  .AC {
+    grid-column: 1/3;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border: 1px solid black;
+  }
+  .AC:active {
+    box-shadow: inset 1px 1px 10px #333;
+  }
+  
+  /*operator buttons are the only ones not assigned grid locations; they fill the remaining spots*/
+  .individualOperators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    font-size: 2rem;
+  }
+  .individualOperators:active {
+    box-shadow: inset 1px 1px 10px #333;
+  }
+  
+  .fa-divide {
+    /*This icon was too thick but the thinner version costs money, so this workaround makes the icon appear thinner.*/
+    -webkit-text-stroke: 1px rgba(126, 195, 212, 0.95);
+  }
+  
+  .equals {
+    grid-row: 5/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border: 1px solid black;
+  }
+  .equals:active {
+    box-shadow: inset 1px 1px 10px #333;
+  }
+  
+  .numbersGroup {
+    grid-column: 1 / 4;
+    grid-row: 3/span 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  
+  .individualNumbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    background-color: none;
+    border: 1px solid black;
+    color: black;
+  }
+  .individualNumbers:active {
+    box-shadow: inset 1px 1px 10px #333;
+  }
+  
+  #zero {
+    grid-column: 1/3;
+  }
